@@ -1,0 +1,20 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: assignment-cluster 
+  region: us-east-2 
+
+managedNodeGroups:
+  - name: ng-1-workers
+    labels: { role: workers }
+    instanceType: m5.large
+    desiredCapacity: 2 
+    volumeSize: 80
+    privateNetworking: true
+  - name: ng-2-builders
+    labels: { role: builders }
+    instanceType: m5.large
+    desiredCapacity: 2
+    volumeSize: 10
+    privateNetworking: true

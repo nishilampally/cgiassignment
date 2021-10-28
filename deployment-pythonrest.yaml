@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pythonhttp-deployment 
+  labels:
+    app: pythonhttp 
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      app: pythonhttp 
+  template:
+    metadata:
+      labels:
+        app: pythonhttp 
+    spec:
+      containers:
+      - name: pythonhttp 
+        image: 332896030213.dkr.ecr.us-east-2.amazonaws.com/assignment-ecr:pythonrest 
+        stdin: true
+        tty: true 
+        ports:
+        - containerPort: 5000 
