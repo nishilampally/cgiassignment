@@ -257,7 +257,6 @@ pythonhttp-deployment-765678666c-75r6j   1/1     Running   0          12s
 
 ```
 
-```
 
 kubectl create -f loadbalancer-pythonhttp.yaml
 service/pythonhttp-service-loadbalancer created
